@@ -25,7 +25,6 @@ def renameAnime(path, dashplace):
                     sss = splitname[2]
 
                 ssss = sss[1:]
-                print(ssss)
 
                 numbernamelist = list()
 
@@ -39,14 +38,11 @@ def renameAnime(path, dashplace):
                     pass
                 else:
                     numbernamelist.append(ssss[0])
-                    print(ssss[0])
                 try:
                     int(ssss[1])
                     numbernamelist.append(ssss[1])
-                    print(ssss[1])
                     try:
                         int(ssss[2])
-                        print(ssss[2])
                         numbernamelist.append(ssss[2])
     
                     except:
@@ -59,7 +55,6 @@ def renameAnime(path, dashplace):
             except:
                 pass
             numbernamelist = ''.join(numbernamelist)
-            print(numbernamelist)
             try:
                 os.rename(fr'{path}\{episode2}',fr'{path}\Episode {numbernamelist}.mp4')
                 output.write(f"{numbernamelist}\n")
@@ -75,6 +70,7 @@ while Coc == True:
     pathOFanimeTOrename = input("Path=")
     DashPlace = int(input("Dash Placement="))
     renameAnime(path=pathOFanimeTOrename,dashplace=DashPlace)
+    print("Done!")
     while cc1 == True:
         ContAns = input("Do You Want To Continue? (Y/N)")
         if ContAns == "Y" or ContAns == "y":
