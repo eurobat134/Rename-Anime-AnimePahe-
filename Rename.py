@@ -25,6 +25,7 @@ def renameAnime(path, dashplace):
                     sss = splitname[2]
 
                 ssss = sss[1:]
+                print(ssss)
 
                 numbernamelist = list()
 
@@ -35,26 +36,30 @@ def renameAnime(path, dashplace):
             try:
                 int(ssss[0])
                 if int(ssss[0]) == 0:
-                    time.sleep(0.1)
+                    pass
                 else:
                     numbernamelist.append(ssss[0])
+                    print(ssss[0])
                 try:
                     int(ssss[1])
                     numbernamelist.append(ssss[1])
+                    print(ssss[1])
                     try:
                         int(ssss[2])
-                        numbernamelist.append(ssss[1])
+                        print(ssss[2])
+                        numbernamelist.append(ssss[2])
     
                     except:
-                        time.sleep(0.1)
+                        pass
                     
                 except:
-                    time.sleep(0.1)
+                    pass
                 
     
             except:
-                time.sleep(0.1)
+                pass
             numbernamelist = ''.join(numbernamelist)
+            print(numbernamelist)
             try:
                 os.rename(fr'{path}\{episode2}',fr'{path}\Episode {numbernamelist}.mp4')
                 output.write(f"{numbernamelist}\n")
